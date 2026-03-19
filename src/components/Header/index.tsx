@@ -37,6 +37,9 @@ const Header = () => {
   };
 
   const usePathName = usePathname();
+  
+  // Language state
+  const [language, setLanguage] = useState('en');
 
   return (
     <>
@@ -171,8 +174,18 @@ const Header = () => {
                 >
                   Sign Up
                 </Link>
-                <div>
+                <div className="mr-4">
                   <ThemeToggler />
+                </div>
+                <div>
+                  <select
+                    value={language}
+                    onChange={(e) => setLanguage(e.target.value)}
+                    className="bg-transparent border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                  </select>
                 </div>
               </div>
             </div>
