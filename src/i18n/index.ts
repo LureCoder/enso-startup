@@ -6,7 +6,7 @@ const translations = {
   zh,
 };
 
-export function t(key: string, locale: string = 'en'): string {
+export function t18n(key: string, locale: string = 'en'): string {
   try {
     const keys = key.split('.');
     let result: any = translations[locale as keyof typeof translations];

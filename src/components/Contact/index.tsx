@@ -1,24 +1,21 @@
 "use client";
 import NewsLatterBox from "./NewsLatterBox";
 import { useEffect, useState } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const Contact = () => {
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -44,12 +41,12 @@ const Contact = () => {
             >
               <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
                 <AnimatedText>
-                  {t('contact.title', language)}
+                  {t18n('contact.title', language)}
                 </AnimatedText>
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
                 <AnimatedText>
-                  {t('contact.description', language)}
+                  {t18n('contact.description', language)}
                 </AnimatedText>
               </p>
               <form>
@@ -61,12 +58,12 @@ const Contact = () => {
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
                         <AnimatedText>
-                          {t('contact.name', language)}
+                          {t18n('contact.name', language)}
                         </AnimatedText>
                       </label>
                       <input
                         type="text"
-                        placeholder={t('contact.name', language)}
+                        placeholder={t18n('contact.name', language)}
                         className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
                     </div>
@@ -78,12 +75,12 @@ const Contact = () => {
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
                         <AnimatedText>
-                          {t('contact.email', language)}
+                          {t18n('contact.email', language)}
                         </AnimatedText>
                       </label>
                       <input
                         type="email"
-                        placeholder={t('contact.email', language)}
+                        placeholder={t18n('contact.email', language)}
                         className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
                     </div>
@@ -95,13 +92,13 @@ const Contact = () => {
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
                         <AnimatedText>
-                          {t('contact.message', language)}
+                          {t18n('contact.message', language)}
                         </AnimatedText>
                       </label>
                       <textarea
                         name="message"
                         rows={5}
-                        placeholder={t('contact.message', language)}
+                        placeholder={t18n('contact.message', language)}
                         className="border-stroke w-full resize-none rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       ></textarea>
                     </div>
@@ -109,7 +106,7 @@ const Contact = () => {
                   <div className="w-full px-4">
                     <button className="rounded-xs bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
                       <AnimatedText>
-                        {t('contact.sendMessage', language)}
+                        {t18n('contact.sendMessage', language)}
                       </AnimatedText>
                     </button>
                   </div>

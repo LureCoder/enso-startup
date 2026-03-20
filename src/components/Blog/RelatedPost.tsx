@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const RelatedPost = ({

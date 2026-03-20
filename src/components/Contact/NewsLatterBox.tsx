@@ -2,26 +2,23 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
   
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -40,35 +37,35 @@ const NewsLatterBox = () => {
     <div className="shadow-three dark:bg-gray-dark relative z-10 rounded-xs bg-white p-8 sm:p-11 lg:p-8 xl:p-11">
       <h3 className="mb-4 text-2xl leading-tight font-bold text-black dark:text-white">
         <AnimatedText>
-          {t('newsletter.title', language)}
+          {t18n('newsletter.title', language)}
         </AnimatedText>
       </h3>
       <p className="border-body-color/25 text-body-color mb-11 border-b pb-11 text-base leading-relaxed dark:border-white/25">
         <AnimatedText>
-          {t('newsletter.description', language)}
+          {t18n('newsletter.description', language)}
         </AnimatedText>
       </p>
       <div>
         <input
           type="text"
           name="name"
-          placeholder={t('newsletter.namePlaceholder', language)}
+          placeholder={t18n('newsletter.namePlaceholder', language)}
           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
         />
         <input
           type="email"
           name="email"
-          placeholder={t('newsletter.emailPlaceholder', language)}
+          placeholder={t18n('newsletter.emailPlaceholder', language)}
           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
         />
         <input
           type="submit"
-          value={t('newsletter.buttonText', language)}
+          value={t18n('newsletter.buttonText', language)}
           className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300"
         />
         <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
           <AnimatedText>
-            {t('newsletter.noSpamText', language)}
+            {t18n('newsletter.noSpamText', language)}
           </AnimatedText>
         </p>
       </div>

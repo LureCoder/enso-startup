@@ -1,4 +1,4 @@
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const PricingBox = (props: {
@@ -31,7 +31,7 @@ const PricingBox = (props: {
         <div className="border-body-color/10 mb-8 border-b pb-8 dark:border-white/10">
           <button className="bg-primary/80 hover:shadow-signUp flex w-full items-center justify-center rounded-xs p-3 text-base font-semibold text-white transition duration-300 ease-in-out">
             <AnimatedText>
-              {t('pricing.startFreeTrial', language)}
+              {t18n('pricing.startFreeTrial', language)}
             </AnimatedText>
           </button>
         </div>

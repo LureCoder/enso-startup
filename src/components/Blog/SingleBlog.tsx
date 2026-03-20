@@ -1,7 +1,7 @@
 import { Blog } from "@/types/blog";
 import Image from "next/image";
 import Link from "next/link";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const SingleBlog = ({ blog, language }: { blog: Blog; language: string }) => {
@@ -11,14 +11,14 @@ const SingleBlog = ({ blog, language }: { blog: Blog; language: string }) => {
   const postIndex = id - 1;
   
   // Get the translated title and paragraph
-  const title = t(`blog.posts.${postIndex}.title`, language);
-  const paragraph = t(`blog.posts.${postIndex}.paragraph`, language);
+  const title = t18n(`blog.posts.${postIndex}.title`, language);
+  const paragraph = t18n(`blog.posts.${postIndex}.paragraph`, language);
   
   // Get the translated tag
-  const translatedTag = tags.length > 0 ? t(`blog.tags.${tags[0]}`, language) : '';
+  const translatedTag = tags.length > 0 ? t18n(`blog.tags.${tags[0]}`, language) : '';
   
   // Get the translated designation
-  const translatedDesignation = author.designation ? t(`blog.designations.${author.designation}`, language) : '';
+  const translatedDesignation = author.designation ? t18n(`blog.designations.${author.designation}`, language) : '';
   
   return (
     <>
@@ -54,7 +54,7 @@ const SingleBlog = ({ blog, language }: { blog: Blog; language: string }) => {
               <div className="w-full">
                 <h4 className="text-dark mb-1 text-sm font-medium dark:text-white">
                   <AnimatedText>
-                    {t('blog.by', language)}
+                    {t18n('blog.by', language)}
                   </AnimatedText>
                   {" "}
                   <AnimatedText>
@@ -68,7 +68,7 @@ const SingleBlog = ({ blog, language }: { blog: Blog; language: string }) => {
             </div>
             <div className="inline-block">
               <h4 className="text-dark mb-1 text-sm font-medium dark:text-white">
-                <AnimatedText>{t('blog.date', language)}</AnimatedText>
+                <AnimatedText>{t18n('blog.date', language)}</AnimatedText>
               </h4>
               <p className="text-body-color text-xs">{publishDate}</p>
             </div>

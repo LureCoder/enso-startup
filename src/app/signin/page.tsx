@@ -2,24 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const SigninPage = () => {
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -43,36 +40,36 @@ const SigninPage = () => {
               <div className="relative mx-auto max-w-[500px] overflow-hidden rounded-lg bg-white px-8 py-10 shadow-one dark:bg-gray-dark sm:p-[55px]">
                 <h3 className="mb-4 text-2xl font-bold text-black dark:text-white sm:text-3xl">
                   <AnimatedText>
-                    {t('signin.title', language)}
+                    {t18n('signin.title', language)}
                   </AnimatedText>
                 </h3>
                 <p className="mb-7 text-base font-medium text-body-color dark:text-body-color-dark">
                   <AnimatedText>
-                    {t('signin.description', language)}
+                    {t18n('signin.description', language)}
                   </AnimatedText>
                 </p>
                 <form>
                   <div className="mb-6">
                     <label className="mb-2 block text-sm font-medium text-black dark:text-white">
                       <AnimatedText>
-                        {t('signin.email', language)}
+                        {t18n('signin.email', language)}
                       </AnimatedText>
                     </label>
                     <input
                       type="email"
-                      placeholder={t('signin.email', language)}
+                      placeholder={t18n('signin.email', language)}
                       className="w-full rounded-md border border-stroke bg-transparent px-5 py-3 text-base text-body-color outline-none focus:border-primary focus-visible:shadow-none dark:border-dark-3 dark:text-white"
                     />
                   </div>
                   <div className="mb-6">
                     <label className="mb-2 block text-sm font-medium text-black dark:text-white">
                       <AnimatedText>
-                        {t('signin.password', language)}
+                        {t18n('signin.password', language)}
                       </AnimatedText>
                     </label>
                     <input
                       type="password"
-                      placeholder={t('signin.password', language)}
+                      placeholder={t18n('signin.password', language)}
                       className="w-full rounded-md border border-stroke bg-transparent px-5 py-3 text-base text-body-color outline-none focus:border-primary focus-visible:shadow-none dark:border-dark-3 dark:text-white"
                     />
                   </div>
@@ -81,7 +78,7 @@ const SigninPage = () => {
                       <input type="checkbox" className="mr-2" />
                       <span className="text-sm font-medium text-body-color dark:text-body-color-dark">
                         <AnimatedText>
-                          {t('signin.rememberMe', language)}
+                          {t18n('signin.rememberMe', language)}
                         </AnimatedText>
                       </span>
                     </label>
@@ -90,26 +87,26 @@ const SigninPage = () => {
                       className="text-sm font-medium text-primary hover:underline"
                     >
                       <AnimatedText>
-                        {t('signin.forgotPassword', language)}
+                        {t18n('signin.forgotPassword', language)}
                       </AnimatedText>
                     </a>
                   </div>
                   <div className="mb-6">
                     <button className="flex w-full items-center justify-center rounded-md bg-primary px-9 py-4 text-base font-semibold text-white duration-300 hover:bg-primary/90">
                       <AnimatedText>
-                        {t('signin.signinButton', language)}
+                        {t18n('signin.signinButton', language)}
                       </AnimatedText>
                     </button>
                   </div>
                 </form>
                 <p className="text-center text-base font-medium text-body-color dark:text-body-color-dark">
                   <AnimatedText>
-                    {t('signin.dontHaveAccount', language)}
+                    {t18n('signin.dontHaveAccount', language)}
                   </AnimatedText>
                   {" "}
                   <a href="/signup" className="text-primary hover:underline">
                     <AnimatedText>
-                      {t('signin.signup', language)}
+                      {t18n('signin.signup', language)}
                     </AnimatedText>
                   </a>
                 </p>

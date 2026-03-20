@@ -3,25 +3,22 @@ import { useState, useEffect } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -40,8 +37,8 @@ const Pricing = () => {
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title={t('pricing.title', language)}
-          paragraph={t('pricing.description', language)}
+          title={t18n('pricing.title', language)}
+          paragraph={t18n('pricing.description', language)}
           center
           width="665px"
         />
@@ -57,7 +54,7 @@ const Pricing = () => {
               } mr-4 cursor-pointer text-base font-semibold`}
             >
               <AnimatedText>
-                {t('pricing.monthly', language)}
+                {t18n('pricing.monthly', language)}
               </AnimatedText>
             </span>
             <div
@@ -84,7 +81,7 @@ const Pricing = () => {
               } ml-4 cursor-pointer text-base font-semibold`}
             >
               <AnimatedText>
-                {t('pricing.yearly', language)}
+                {t18n('pricing.yearly', language)}
               </AnimatedText>
             </span>
           </div>

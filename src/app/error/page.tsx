@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const ErrorPage = () => {
@@ -43,12 +43,12 @@ const ErrorPage = () => {
                 </h2>
                 <h3 className="mb-3 text-2xl font-bold leading-tight text-black dark:text-white sm:text-3xl sm:leading-tight">
                   <AnimatedText>
-                    {t('404.title', language)}
+                    {t18n('404.title', language)}
                   </AnimatedText>
                 </h3>
                 <p className="mb-7 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
                   <AnimatedText>
-                    {t('404.description', language)}
+                    {t18n('404.description', language)}
                   </AnimatedText>
                 </p>
                 <Link
@@ -56,7 +56,7 @@ const ErrorPage = () => {
                   className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-semibold text-white duration-300 hover:bg-primary/90"
                 >
                   <AnimatedText>
-                    {t('404.goHome', language)}
+                    {t18n('404.goHome', language)}
                   </AnimatedText>
                 </Link>
               </div>

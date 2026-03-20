@@ -6,24 +6,21 @@ import TagButton from "@/components/Blog/TagButton";
 import NewsLatterBox from "@/components/Contact/NewsLatterBox";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const BlogSidebarPage = () => {
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -47,12 +44,12 @@ const BlogSidebarPage = () => {
               <div className="mb-8 rounded-md bg-white p-6 shadow-one dark:bg-gray-dark sm:p-[55px] lg:mb-0 lg:px-8 xl:p-[55px]">
                 <h2 className="mb-4 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
                     <AnimatedText>
-                      {t('blogDetails.title', language)}
+                      {t18n('blogDetails.title', language)}
                     </AnimatedText>
                   </h2>
                   <p className="mb-6 text-base font-medium text-body-color dark:text-body-color-dark">
                     <AnimatedText>
-                      {t('blogDetails.description', language)}
+                      {t18n('blogDetails.description', language)}
                     </AnimatedText>
                   </p>
                   <div className="mb-6 flex items-center border-b border-body-color/10 pb-6 dark:border-white/10">
@@ -66,12 +63,12 @@ const BlogSidebarPage = () => {
                     <div>
                       <h4 className="text-base font-semibold text-black dark:text-white">
                         <AnimatedText>
-                          {t('blogDetails.author', language)}
+                          {t18n('blogDetails.author', language)}
                         </AnimatedText>
                       </h4>
                       <p className="text-sm text-body-color dark:text-body-color-dark">
                         <AnimatedText>
-                          {t('blogDetails.date', language)}
+                          {t18n('blogDetails.date', language)}
                         </AnimatedText>
                       </p>
                     </div>

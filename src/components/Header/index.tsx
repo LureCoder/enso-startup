@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import LanguageToggler from "./LanguageToggler";
 import menuData from "./menuData";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const Header = () => {
@@ -42,20 +42,17 @@ const Header = () => {
   const usePathName = usePathname();
   const router = useRouter();
   
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -149,7 +146,7 @@ const Header = () => {
                             }`}
                           >
                             <AnimatedText>
-                              {t(`header.${menuItem.title.toLowerCase()}`, language) || menuItem.title}
+                              {t18n(`header.${menuItem.title.toLowerCase()}`, language) || menuItem.title}
                             </AnimatedText>
                           </Link>
                         ) : (
@@ -159,7 +156,7 @@ const Header = () => {
                               className="text-dark group-hover:text-primary flex cursor-pointer items-center justify-between py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 dark:text-white/70 dark:group-hover:text-white"
                             >
                               <AnimatedText>
-                                {t(`header.${menuItem.title.toLowerCase()}`, language) || menuItem.title}
+                                {t18n(`header.${menuItem.title.toLowerCase()}`, language) || menuItem.title}
                               </AnimatedText>
                               <span className="pl-3">
                                 <svg width="25" height="24" viewBox="0 0 25 24">
@@ -184,7 +181,7 @@ const Header = () => {
                                   className="text-dark hover:text-primary block rounded-sm py-2.5 text-sm lg:px-3 dark:text-white/70 dark:hover:text-white"
                                 >
                                   <AnimatedText>
-                                {t(`header.submenu.${submenuItem.title.toLowerCase().replace(/\s+/g, '-')}`, language) || submenuItem.title}
+                                {t18n(`header.submenu.${submenuItem.title.toLowerCase().replace(/\s+/g, '-')}`, language) || submenuItem.title}
                               </AnimatedText>
                                 </Link>
                               ))}
@@ -202,7 +199,7 @@ const Header = () => {
                   className="text-dark hidden px-7 py-3 text-base font-medium hover:opacity-70 md:block dark:text-white"
                 >
                   <AnimatedText>
-                    {t('header.signin', language)}
+                    {t18n('header.signin', language)}
                   </AnimatedText>
                 </Link>
                 <Link
@@ -210,7 +207,7 @@ const Header = () => {
                   className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-xs px-8 py-3 text-base font-medium text-white transition duration-300 md:block md:px-9 lg:px-6 xl:px-9"
                 >
                   <AnimatedText>
-                    {t('header.signup', language)}
+                    {t18n('header.signup', language)}
                   </AnimatedText>
                 </Link>
                 <div className="mr-4">

@@ -1,6 +1,6 @@
 import { Testimonial } from "@/types/testimonial";
 import Image from "next/image";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 const starIcon = (
   <svg width="18" height="16" viewBox="0 0 18 16" className="fill-current">
@@ -25,7 +25,7 @@ const SingleTestimonial = ({ testimonial, language }: { testimonial: Testimonial
       <div className="shadow-two hover:shadow-one dark:bg-dark dark:shadow-three dark:hover:shadow-gray-dark rounded-xs bg-white p-8 duration-300 lg:px-5 xl:px-8">
         <div className="mb-5 flex items-center space-x-1">{ratingIcons}</div>
         <p className="border-body-color/10 text-body-color mb-8 border-b pb-8 text-base leading-relaxed dark:border-white/10 dark:text-white">
-          “<AnimatedText>{t('testimonials.content', language)}</AnimatedText>
+          “<AnimatedText>{t18n('testimonials.content', language)}</AnimatedText>
         </p>
         <div className="flex items-center">
           <div className="relative mr-4 h-[50px] w-full max-w-[50px] overflow-hidden rounded-full">

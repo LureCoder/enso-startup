@@ -2,24 +2,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const Footer = () => {
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -144,7 +141,7 @@ const Footer = () => {
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   <AnimatedText>
-                    {t('footer.usefulLinks', language)}
+                    {t18n('footer.usefulLinks', language)}
                   </AnimatedText>
                 </h2>
                 <ul>
@@ -154,7 +151,7 @@ const Footer = () => {
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <AnimatedText>
-                      {t('header.blog', language)}
+                      {t18n('header.blog', language)}
                     </AnimatedText>
                   </Link>
                 </li>
@@ -164,7 +161,7 @@ const Footer = () => {
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <AnimatedText>
-                      {t('header.pricing', language)}
+                      {t18n('header.pricing', language)}
                     </AnimatedText>
                   </Link>
                 </li>
@@ -174,7 +171,7 @@ const Footer = () => {
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <AnimatedText>
-                      {t('header.about', language)}
+                      {t18n('header.about', language)}
                     </AnimatedText>
                   </Link>
                 </li>
@@ -185,7 +182,7 @@ const Footer = () => {
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  {t('footer.terms', language)}
+                  {t18n('footer.terms', language)}
                 </h2>
                 <ul>
                   <li>
@@ -193,7 +190,7 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t('footer.tos', language)}
+                    {t18n('footer.tos', language)}
                   </Link>
                 </li>
                 <li>
@@ -201,7 +198,7 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t('footer.privacyPolicy', language)}
+                    {t18n('footer.privacyPolicy', language)}
                   </Link>
                 </li>
                 <li>
@@ -209,7 +206,7 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t('footer.refundPolicy', language)}
+                    {t18n('footer.refundPolicy', language)}
                   </Link>
                 </li>
                 </ul>
@@ -219,7 +216,7 @@ const Footer = () => {
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  {t('footer.support', language)}
+                  {t18n('footer.support', language)}
                 </h2>
                 <ul>
                   <li>
@@ -227,7 +224,7 @@ const Footer = () => {
                     href="/contact"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t('footer.openSupportTicket', language)}
+                    {t18n('footer.openSupportTicket', language)}
                   </Link>
                 </li>
                 <li>
@@ -235,7 +232,7 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t('footer.termsOfUse', language)}
+                    {t18n('footer.termsOfUse', language)}
                   </Link>
                 </li>
                 <li>
@@ -243,7 +240,7 @@ const Footer = () => {
                     href="/about"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t('header.about', language)}
+                    {t18n('header.about', language)}
                   </Link>
                 </li>
                 </ul>

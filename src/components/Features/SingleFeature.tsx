@@ -1,5 +1,5 @@
 import { Feature } from "@/types/feature";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const SingleFeature = ({ feature, language }: { feature: Feature; language: string }) => {
@@ -12,12 +12,12 @@ const SingleFeature = ({ feature, language }: { feature: Feature; language: stri
         </div>
         <h3 className="mb-5 text-xl font-bold text-black sm:text-2xl lg:text-xl xl:text-2xl dark:text-white">
           <AnimatedText>
-            {t(`features.items.${title}`, language)}
+            {t18n(`features.items.${title}`, language)}
           </AnimatedText>
         </h3>
         <p className="text-body-color pr-[10px] text-base leading-relaxed font-medium">
           <AnimatedText>
-            {t(`features.items.${title}_desc`, language)}
+            {t18n(`features.items.${title}_desc`, language)}
           </AnimatedText>
         </p>
       </div>

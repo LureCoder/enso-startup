@@ -4,7 +4,7 @@ import VideoModal from "@/components/video-modal";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import SectionTitle from "../Common/SectionTitle";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 
 export default function Video() {
   const [isOpen, setOpen] = useState(false);
@@ -37,8 +37,8 @@ export default function Video() {
       <section className="relative z-10 py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title={t('video.title', language)}
-            paragraph={t('video.description', language)}
+            title={t18n('video.title', language)}
+            paragraph={t18n('video.description', language)}
             center
             mb="80px"
           />

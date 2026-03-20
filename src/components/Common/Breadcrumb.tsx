@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import WithLanguageTransition from "./WithLanguageTransition";
 import AnimatedText from "./AnimatedText";
 
@@ -36,7 +36,7 @@ const Breadcrumb = ({
                       className="pr-1 text-base font-medium text-body-color hover:text-primary"
                     >
                       <AnimatedText>
-                        {t('breadcrumb.home', language)}
+                        {t18n('breadcrumb.home', language)}
                       </AnimatedText>
                     </Link>
                     <span className="mr-3 block h-2 w-2 rotate-45 border-r-2 border-t-2 border-body-color"></span>

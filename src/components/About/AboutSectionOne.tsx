@@ -2,7 +2,7 @@
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
 import { useEffect, useState } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const checkIcon = (
@@ -12,20 +12,17 @@ const checkIcon = (
 );
 
 const AboutSectionOne = () => {
-  // Get current locale - default to 'en' on server, then use localStorage value on client
-  const [language, setLanguage] = useState(() => {
-    // On server, default to 'en'
-    // On client, try to get from localStorage
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      return storedLanguage || 'en';
-    }
-    return 'en';
-  });
+  // Get current locale - default to 'en' on server, then update from localStorage on client
+  const [language, setLanguage] = useState('en');
   
-  // Update language from localStorage after hydration and listen for language changes
+  // Update language from localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const storedLanguage = localStorage.getItem('language');
+      if (storedLanguage) {
+        setLanguage(storedLanguage);
+      }
+      
       // Listen for language changes using custom event
       const handleLanguageChange = () => {
         const newLanguage = localStorage.getItem('language') || 'en';
@@ -46,7 +43,7 @@ const AboutSectionOne = () => {
         {checkIcon}
       </span>
       <AnimatedText>
-        {t(`about.features.${index}`, language)}
+        {t18n(`about.features.${index}`, language)}
       </AnimatedText>
     </p>
   );
@@ -58,8 +55,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title={t('about.title', language)}
-                paragraph={t('about.description', language)}
+                title={t18n('about.title', language)}
+                paragraph={t18n('about.description', language)}
                 mb="44px"
               />
 

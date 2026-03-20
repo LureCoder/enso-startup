@@ -1,4 +1,4 @@
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
 
 const checkIcon = (
@@ -29,7 +29,7 @@ const OfferList = ({
       </span>
       <p className="text-body-color m-0 text-base font-medium">
         <AnimatedText>
-          {t(`pricing.features.${text}`, language) || text}
+          {t18n(`pricing.features.${text}`, language) || text}
         </AnimatedText>
       </p>
     </div>

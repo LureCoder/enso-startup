@@ -4,7 +4,7 @@ import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
 import { useState, useEffect } from "react";
-import { t } from "@/i18n";
+import { t18n } from "@/i18n";
 
 const Blog = () => {
   const [language, setLanguage] = useState('en');
@@ -38,8 +38,8 @@ const Blog = () => {
     >
       <div className="container">
         <SectionTitle
-          title={t('blog.title', language)}
-          paragraph={t('blog.description', language)}
+          title={t18n('blog.title', language)}
+          paragraph={t18n('blog.description', language)}
           center
         />
 
