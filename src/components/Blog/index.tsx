@@ -3,33 +3,12 @@
 import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
-import { useState, useEffect } from "react";
 import { t18n } from "@/i18n";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Blog = () => {
-  const [language, setLanguage] = useState('en');
-  
-  // Update language from localStorage after hydration
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage) {
-        setLanguage(storedLanguage);
-      }
-      
-      // Listen for language changes using custom event
-      const handleLanguageChange = () => {
-        const newLanguage = localStorage.getItem('language') || 'en';
-        setLanguage(newLanguage);
-      };
-      
-      window.addEventListener('languageChange', handleLanguageChange);
-      
-      return () => {
-        window.removeEventListener('languageChange', handleLanguageChange);
-      };
-    }
-  }, []);
+  // Use custom hook for language management
+  const language = useLanguage();
 
   return (
     <section

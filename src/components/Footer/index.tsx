@@ -4,32 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Footer = () => {
-  // Get current locale - default to 'en' on server, then update from localStorage on client
-  const [language, setLanguage] = useState('en');
-  
-  // Update language from localStorage after hydration
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage) {
-        setLanguage(storedLanguage);
-      }
-      
-      // Listen for language changes using custom event
-      const handleLanguageChange = () => {
-        const newLanguage = localStorage.getItem('language') || 'en';
-        setLanguage(newLanguage);
-      };
-      
-      window.addEventListener('languageChange', handleLanguageChange);
-      
-      return () => {
-        window.removeEventListener('languageChange', handleLanguageChange);
-      };
-    }
-  }, []);
+  // Use custom hook for language management
+  const language = useLanguage();
 
   return (
     <>
@@ -182,7 +161,9 @@ const Footer = () => {
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  {t18n('footer.terms', language)}
+                  <AnimatedText>
+                    {t18n('footer.terms', language)}
+                  </AnimatedText>
                 </h2>
                 <ul>
                   <li>
@@ -190,7 +171,9 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t18n('footer.tos', language)}
+                    <AnimatedText>
+                      {t18n('footer.tos', language)}
+                    </AnimatedText>
                   </Link>
                 </li>
                 <li>
@@ -198,7 +181,9 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t18n('footer.privacyPolicy', language)}
+                    <AnimatedText>
+                      {t18n('footer.privacyPolicy', language)}
+                    </AnimatedText>
                   </Link>
                 </li>
                 <li>
@@ -206,7 +191,9 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t18n('footer.refundPolicy', language)}
+                    <AnimatedText>
+                      {t18n('footer.refundPolicy', language)}
+                    </AnimatedText>
                   </Link>
                 </li>
                 </ul>
@@ -216,7 +203,9 @@ const Footer = () => {
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  {t18n('footer.support', language)}
+                  <AnimatedText>
+                    {t18n('footer.support', language)}
+                  </AnimatedText>
                 </h2>
                 <ul>
                   <li>
@@ -224,7 +213,9 @@ const Footer = () => {
                     href="/contact"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t18n('footer.openSupportTicket', language)}
+                    <AnimatedText>
+                      {t18n('footer.openSupportTicket', language)}
+                    </AnimatedText>
                   </Link>
                 </li>
                 <li>
@@ -232,7 +223,9 @@ const Footer = () => {
                     href="/"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t18n('footer.termsOfUse', language)}
+                    <AnimatedText>
+                      {t18n('footer.termsOfUse', language)}
+                    </AnimatedText>
                   </Link>
                 </li>
                 <li>
@@ -240,7 +233,9 @@ const Footer = () => {
                     href="/about"
                     className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
-                    {t18n('header.about', language)}
+                    <AnimatedText>
+                      {t18n('header.about', language)}
+                    </AnimatedText>
                   </Link>
                 </li>
                 </ul>

@@ -8,32 +8,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const BlogSidebarPage = () => {
-  // Get current locale - default to 'en' on server, then update from localStorage on client
-  const [language, setLanguage] = useState('en');
-  
-  // Update language from localStorage after hydration
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage) {
-        setLanguage(storedLanguage);
-      }
-      
-      // Listen for language changes using custom event
-      const handleLanguageChange = () => {
-        const newLanguage = localStorage.getItem('language') || 'en';
-        setLanguage(newLanguage);
-      };
-      
-      window.addEventListener('languageChange', handleLanguageChange);
-      
-      return () => {
-        window.removeEventListener('languageChange', handleLanguageChange);
-      };
-    }
-  }, []);
+  // Use custom hook for language management
+  const language = useLanguage();
 
   return (
     <>

@@ -3,32 +3,17 @@ import NewsLatterBox from "./NewsLatterBox";
 import { useEffect, useState } from "react";
 import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Contact = () => {
-  // Get current locale - default to 'en' on server, then update from localStorage on client
-  const [language, setLanguage] = useState('en');
-  
-  // Update language from localStorage after hydration
+  // Use custom hook for language management
+  const language = useLanguage();
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage) {
-        setLanguage(storedLanguage);
-      }
-      
-      // Listen for language changes using custom event
-      const handleLanguageChange = () => {
-        const newLanguage = localStorage.getItem('language') || 'en';
-        setLanguage(newLanguage);
-      };
-      
-      window.addEventListener('languageChange', handleLanguageChange);
-      
-      return () => {
-        window.removeEventListener('languageChange', handleLanguageChange);
-      };
-    }
+    setIsClient(true);
   }, []);
+
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -49,7 +34,7 @@ const Contact = () => {
                   {t18n('contact.description', language)}
                 </AnimatedText>
               </p>
-              <form>
+              <form key={isClient ? 'client' : 'server'}>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">

@@ -2,35 +2,15 @@
 
 import VideoModal from "@/components/video-modal";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import { t18n } from "@/i18n";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Video() {
   const [isOpen, setOpen] = useState(false);
-  const [language, setLanguage] = useState('en');
-  
-  // Update language from localStorage after hydration
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage) {
-        setLanguage(storedLanguage);
-      }
-      
-      // Listen for language changes using custom event
-      const handleLanguageChange = () => {
-        const newLanguage = localStorage.getItem('language') || 'en';
-        setLanguage(newLanguage);
-      };
-      
-      window.addEventListener('languageChange', handleLanguageChange);
-      
-      return () => {
-        window.removeEventListener('languageChange', handleLanguageChange);
-      };
-    }
-  }, []);
+  // Use custom hook for language management
+  const language = useLanguage();
 
   return (
     <>

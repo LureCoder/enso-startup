@@ -1,17 +1,25 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { setLanguageCookie, getLanguageFromCookie } from "@/utils/languageCookie";
 
 const LanguageToggler = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState('en');
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Update language from localStorage after hydration
+  // Update language from cookie/localStorage after hydration
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage) {
-        setLanguage(storedLanguage);
+      // First try to read from cookie
+      const cookieLanguage = getLanguageFromCookie();
+      if (cookieLanguage && cookieLanguage !== 'en') {
+        setLanguage(cookieLanguage);
+      } else {
+        // Fallback to localStorage
+        const storedLanguage = localStorage.getItem('language');
+        if (storedLanguage) {
+          setLanguage(storedLanguage);
+        }
       }
     }
   }, []);
@@ -33,6 +41,8 @@ const LanguageToggler = () => {
   const handleLanguageChange = (newLanguage: string) => {
     setLanguage(newLanguage);
     if (typeof window !== 'undefined') {
+      // Save to both cookie and localStorage
+      setLanguageCookie(newLanguage);
       localStorage.setItem('language', newLanguage);
       // Trigger custom event for other components
       window.dispatchEvent(new Event('languageChange'));

@@ -4,33 +4,17 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { t18n } from "@/i18n";
 import AnimatedText from "@/components/Common/AnimatedText";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const NewsLatterBox = () => {
   const { theme } = useTheme();
   
-  // Get current locale - default to 'en' on server, then update from localStorage on client
-  const [language, setLanguage] = useState('en');
-  
-  // Update language from localStorage after hydration
+  // Use custom hook for language management
+  const language = useLanguage();
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedLanguage = localStorage.getItem('language');
-      if (storedLanguage) {
-        setLanguage(storedLanguage);
-      }
-      
-      // Listen for language changes using custom event
-      const handleLanguageChange = () => {
-        const newLanguage = localStorage.getItem('language') || 'en';
-        setLanguage(newLanguage);
-      };
-      
-      window.addEventListener('languageChange', handleLanguageChange);
-      
-      return () => {
-        window.removeEventListener('languageChange', handleLanguageChange);
-      };
-    }
+    setIsClient(true);
   }, []);
 
   return (
@@ -45,7 +29,7 @@ const NewsLatterBox = () => {
           {t18n('newsletter.description', language)}
         </AnimatedText>
       </p>
-      <div>
+      <form key={isClient ? 'client' : 'server'}>
         <input
           type="text"
           name="name"
@@ -58,17 +42,20 @@ const NewsLatterBox = () => {
           placeholder={t18n('newsletter.emailPlaceholder', language)}
           className="border-stroke text-body-color focus:border-primary dark:text-body-color-dark dark:shadow-two dark:focus:border-primary mb-4 w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base outline-hidden dark:border-transparent dark:bg-[#2C303B] dark:focus:shadow-none"
         />
-        <input
+        <button
           type="submit"
-          value={t18n('newsletter.buttonText', language)}
           className="bg-primary shadow-submit hover:bg-primary/90 dark:shadow-submit-dark mb-5 flex w-full cursor-pointer items-center justify-center rounded-xs px-9 py-4 text-base font-medium text-white duration-300"
-        />
-        <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
+        >
           <AnimatedText>
-            {t18n('newsletter.noSpamText', language)}
+            {t18n('newsletter.buttonText', language)}
           </AnimatedText>
-        </p>
-      </div>
+        </button>
+      </form>
+      <p className="text-body-color dark:text-body-color-dark text-center text-base leading-relaxed">
+        <AnimatedText>
+          {t18n('newsletter.noSpamText', language)}
+        </AnimatedText>
+      </p>
 
       <div>
         <span className="absolute top-7 left-2">

@@ -29,13 +29,14 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, className = "" })
 
   return (
     <span
-      className={`transition-all duration-300 ease-in-out ${className}`}
+      suppressHydrationWarning
+      className={`transition-all duration-100 ease-in-out ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(5px)',
         display: 'inline-block',
         minHeight: '1em',
-        transition: 'opacity 300ms ease-in-out, transform 300ms ease-in-out',
+        transition: 'opacity 100ms ease-in-out, transform 100ms ease-in-out',
       }}
     >
       {displayedText}
