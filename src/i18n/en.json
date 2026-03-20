@@ -185,10 +185,16 @@
     "termsAgree": "By creating account means you agree to the",
     "andOur": "and our",
     "signupButton": "Sign Up",
-    "alreadyHaveAccount": "Already using Startup?",
+    "alreadyHaveAccount": "Already using Enso?",
     "signin": "Sign In",
     "googleSignup": "Sign up with Google",
     "githubSignup": "Sign up with Github",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "termsAgreePlaceholder": "I agree to the terms and conditions",
+    "signinButton": "Sign In",
     "orRegisterWithEmail": "Or, register with your email"
   },
   "404": {

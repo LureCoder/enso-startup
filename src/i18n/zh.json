@@ -185,10 +185,16 @@
     "termsAgree": "创建账户即表示您同意",
     "andOur": "和我们的",
     "signupButton": "注册",
-    "alreadyHaveAccount": "已经在使用Startup?",
+    "alreadyHaveAccount": "已经在使用Enso?",
     "signin": "登录",
     "googleSignup": "使用Google注册",
     "githubSignup": "使用Github注册",
+    "namePlaceholder": "输入您的姓名",
+    "emailPlaceholder": "输入您的邮箱",
+    "passwordPlaceholder": "输入您的密码",
+    "confirmPasswordPlaceholder": "确认您的密码",
+    "termsAgreePlaceholder": "我同意条款和条件",
+    "signinButton": "登录",
     "orRegisterWithEmail": "或者，使用邮箱注册"
   },
   "404": {
