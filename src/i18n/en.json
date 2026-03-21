@@ -292,7 +292,12 @@
         "title": "CRM Platform",
         "description": "Manage customer relationships with powerful tools"
       }
-    ]
+    ],
+    "about": "About This Product",
+    "keyFeatures": "Key Features",
+    "specifications": "Specifications",
+    "benefits": "Benefits",
+    "contactUs": "Contact Us for More Information"
   },
   "newsletter": {
     "title": "Subscribe to receive future updates",

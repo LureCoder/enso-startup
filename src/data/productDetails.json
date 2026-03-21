@@ -1,0 +1,160 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Cloud Platform",
+      "description": "Scalable cloud infrastructure for modern applications",
+      "fullDescription": "Our Cloud Platform provides enterprise-grade cloud infrastructure designed to support modern applications at any scale. With automatic scaling, high availability, and robust security features, you can focus on building great applications while we handle the infrastructure.",
+      "category": "cloud",
+      "image": "/images/products/product-01.jpg",
+      "gallery": [
+        "/images/products/product-01-1.jpg",
+        "/images/products/product-01-2.jpg",
+        "/images/products/product-01-3.jpg"
+      ],
+      "features": ["autoScaling", "uptime", "support247"],
+      "specifications": [
+        { "label": "Deployment Time", "value": "Under 5 minutes" },
+        { "label": "Uptime SLA", "value": "99.9%" },
+        { "label": "Data Centers", "value": "15+ Global Locations" },
+        { "label": "Support", "value": "24/7 Technical Support" }
+      ],
+      "benefits": [
+        "Reduce infrastructure costs by up to 40%",
+        "Scale automatically based on demand",
+        "Deploy globally with a single click",
+        "Enterprise-grade security and compliance"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Analytics Dashboard",
+      "description": "Real-time analytics and insights for your business",
+      "fullDescription": "Transform your data into actionable insights with our comprehensive Analytics Dashboard. Monitor key metrics in real-time, create custom reports, and make data-driven decisions to grow your business faster.",
+      "category": "analytics",
+      "image": "/images/products/product-02.jpg",
+      "gallery": [
+        "/images/products/product-02-1.jpg",
+        "/images/products/product-02-2.jpg",
+        "/images/products/product-02-3.jpg"
+      ],
+      "features": ["realtimeData", "customReports", "apiAccess"],
+      "specifications": [
+        { "label": "Data Processing", "value": "Real-time" },
+        { "label": "Report Types", "value": "50+ Templates" },
+        { "label": "Data Sources", "value": "Unlimited" },
+        { "label": "Export Formats", "value": "PDF, Excel, CSV" }
+      ],
+      "benefits": [
+        "Make faster, data-driven decisions",
+        "Identify trends before competitors",
+        "Automate reporting and save hours",
+        "Share insights across your organization"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Security Suite",
+      "description": "Enterprise-grade security solutions for your data",
+      "fullDescription": "Protect your business with our comprehensive Security Suite. Featuring advanced threat detection, end-to-end encryption, and compliance management, our solution keeps your data safe and your business compliant with industry regulations.",
+      "category": "security",
+      "image": "/images/products/product-03.jpg",
+      "gallery": [
+        "/images/products/product-03-1.jpg",
+        "/images/products/product-03-2.jpg",
+        "/images/products/product-03-3.jpg"
+      ],
+      "features": ["encryption", "threatDetection", "compliance"],
+      "specifications": [
+        { "label": "Encryption", "value": "AES-256" },
+        { "label": "Threat Detection", "value": "AI-powered" },
+        { "label": "Compliance", "value": "SOC 2, GDPR, HIPAA" },
+        { "label": "Response Time", "value": "< 1 minute" }
+      ],
+      "benefits": [
+        "Protect sensitive customer data",
+        "Meet regulatory compliance requirements",
+        "Prevent costly security breaches",
+        "Build trust with your customers"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "AI Assistant",
+      "description": "Intelligent automation powered by machine learning",
+      "fullDescription": "Supercharge your productivity with our AI Assistant. Leveraging cutting-edge machine learning, it automates repetitive tasks, provides intelligent recommendations, and helps your team work smarter, not harder.",
+      "category": "ai",
+      "image": "/images/products/product-04.jpg",
+      "gallery": [
+        "/images/products/product-04-1.jpg",
+        "/images/products/product-04-2.jpg",
+        "/images/products/product-04-3.jpg"
+      ],
+      "features": ["naturalLanguage", "taskAutomation", "integration"],
+      "specifications": [
+        { "label": "Languages", "value": "50+ Supported" },
+        { "label": "Response Time", "value": "< 500ms" },
+        { "label": "Accuracy", "value": "95%+" },
+        { "label": "Integrations", "value": "100+ Apps" }
+      ],
+      "benefits": [
+        "Automate repetitive tasks",
+        "Improve customer response times",
+        "Reduce operational costs",
+        "Scale without adding headcount"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "DevOps Tools",
+      "description": "Streamline your development and deployment workflow",
+      "fullDescription": "Accelerate your software delivery with our comprehensive DevOps Tools. From CI/CD pipelines to container orchestration, we provide everything your team needs to build, test, and deploy faster and more reliably.",
+      "category": "devops",
+      "image": "/images/products/product-05.jpg",
+      "gallery": [
+        "/images/products/product-05-1.jpg",
+        "/images/products/product-05-2.jpg",
+        "/images/products/product-05-3.jpg"
+      ],
+      "features": ["cicdPipeline", "containerSupport", "monitoring"],
+      "specifications": [
+        { "label": "Deployment Frequency", "value": "Unlimited" },
+        { "label": "Build Time", "value": "3x Faster" },
+        { "label": "Uptime", "value": "99.99%" },
+        { "label": "Rollback", "value": "One-click" }
+      ],
+      "benefits": [
+        "Deploy code 10x faster",
+        "Reduce deployment failures",
+        "Improve team collaboration",
+        "Monitor performance in real-time"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "CRM Platform",
+      "description": "Manage customer relationships with powerful tools",
+      "fullDescription": "Build stronger customer relationships with our CRM Platform. Track interactions, manage your sales pipeline, and gain insights that help you close more deals and keep customers happy.",
+      "category": "crm",
+      "image": "/images/products/product-06.jpg",
+      "gallery": [
+        "/images/products/product-06-1.jpg",
+        "/images/products/product-06-2.jpg",
+        "/images/products/product-06-3.jpg"
+      ],
+      "features": ["contactManagement", "salesPipeline", "reporting"],
+      "specifications": [
+        { "label": "Contacts", "value": "Unlimited" },
+        { "label": "Pipeline Stages", "value": "Customizable" },
+        { "label": "Reports", "value": "Real-time" },
+        { "label": "Mobile App", "value": "iOS & Android" }
+      ],
+      "benefits": [
+        "Close deals 30% faster",
+        "Improve customer retention",
+        "Track every interaction",
+        "Forecast sales accurately"
+      ]
+    }
+  ]
+}

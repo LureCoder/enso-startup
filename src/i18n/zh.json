@@ -270,7 +270,7 @@
     "items": [
       {
         "title": "云平台",
-        "description": "为现代应用程序提供可扩展的云基础设施"
+        "description": "为现代应用提供可扩展的云基础设施"
       },
       {
         "title": "分析仪表板",
@@ -292,7 +292,12 @@
         "title": "CRM 平台",
         "description": "使用强大工具管理客户关系"
       }
-    ]
+    ],
+    "about": "关于此产品",
+    "keyFeatures": "主要特性",
+    "specifications": "规格参数",
+    "benefits": "产品优势",
+    "contactUs": "联系我们获取更多信息"
   },
   "newsletter": {
     "title": "订阅以接收未来更新",
