@@ -2,18 +2,55 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/image-gallery.css";
 import { t18n } from "@/i18n";
 import { useLanguage } from "@/hooks/useLanguage";
 import AnimatedText from "@/components/Common/AnimatedText";
 
+// Add heartbeat animation styles
+const styles = `
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement('style');
+  styleSheet.type = 'text/css';
+  styleSheet.innerText = styles;
+  document.head.appendChild(styleSheet);
+}
+
+interface GalleryItem {
+  image: string;
+  url: string;
+}
+
 interface Product {
   id: number;
+  slug: string;
   title: string;
   description: string;
   fullDescription: string;
   category: string;
   image: string;
-  gallery: string[];
+  gallery: GalleryItem[];
   features: string[];
   specifications: { label: string; value: string }[];
   benefits: string[];
@@ -68,32 +105,50 @@ export default function ProductDetailsClient({ product }: { product: Product }) 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left Column - Images */}
-          <div className="space-y-4">
-            {/* Main Image */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-              <Image
-                src={product.image}
-                alt={product.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-            {/* Gallery */}
-            <div className="grid grid-cols-3 gap-4">
-              {product.gallery.map((image, index) => (
-                <div
-                  key={index}
-                  className="relative aspect-square overflow-hidden rounded-lg"
-                >
-                  <Image
-                    src={image}
-                    alt={`${product.title} - ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <div>
+            <ImageGallery
+              items={product.gallery.map((galleryItem) => ({
+                original: galleryItem.image,
+                thumbnail: galleryItem.image
+              }))}
+              showThumbnails={true}
+              showFullscreenButton={true}
+              showPlayButton={false}
+              autoPlay={false}
+              renderCustomControls={() => {
+                if (product.gallery.length > 0 && product.gallery[0].url) {
+                  return (
+                    <button
+                      className="image-gallery-custom-link-button"
+                      onClick={() => window.open(product.gallery[0].url, '_blank')}
+                      style={{
+                        position: 'absolute',
+                        right: '60px',
+                        bottom: '16px',
+                        zIndex: 10,
+                        background: 'rgba(0, 0, 0, 0.5)',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '32px',
+                        height: '32px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        animation: 'heartbeat 2s ease-in-out infinite'
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                      </svg>
+                    </button>
+                  );
+                }
+                return null;
+              }}
+            />
           </div>
 
           {/* Right Column - Details */}

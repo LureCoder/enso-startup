@@ -1,27 +1,20 @@
 import productDetailsData from "@/data/productDetails.json";
 import ProductDetailsClient from "./ProductDetailsClient";
+import ProductNotFound from "./ProductNotFound";
 
 // Generate static params for all products
 export function generateStaticParams() {
   return productDetailsData.products.map((product) => ({
-    id: product.id.toString(),
+    id: product.slug,
   }));
 }
 
 export default async function ProductDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const productId = parseInt(id);
-  const product = productDetailsData.products.find((p) => p.id === productId);
+  const product = productDetailsData.products.find((p) => p.slug === id);
 
   if (!product) {
-    return (
-      <div className="container py-20 text-center">
-        <h1 className="text-2xl font-bold">Product not found</h1>
-        <a href="/products" className="text-primary mt-4 inline-block">
-          Back to Products
-        </a>
-      </div>
-    );
+    return <ProductNotFound />;
   }
 
   return <ProductDetailsClient product={product} />;

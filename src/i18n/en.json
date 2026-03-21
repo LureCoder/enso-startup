@@ -269,8 +269,8 @@
     },
     "items": [
       {
-        "title": "Cloud Platform",
-        "description": "Scalable cloud infrastructure for modern applications"
+        "title": "Website",
+        "description": "Professional website development services for your business"
       },
       {
         "title": "Analytics Dashboard",
@@ -297,7 +297,9 @@
     "keyFeatures": "Key Features",
     "specifications": "Specifications",
     "benefits": "Benefits",
-    "contactUs": "Contact Us for More Information"
+    "contactUs": "Contact Us for More Information",
+    "notFound": "Product not found",
+    "backToProducts": "Back to Products"
   },
   "newsletter": {
     "title": "Subscribe to receive future updates",

@@ -269,8 +269,8 @@
     },
     "items": [
       {
-        "title": "云平台",
-        "description": "为现代应用提供可扩展的云基础设施"
+        "title": "网站",
+        "description": "为您的企业提供专业网站开发服务"
       },
       {
         "title": "分析仪表板",
@@ -297,7 +297,9 @@
     "keyFeatures": "主要特性",
     "specifications": "规格参数",
     "benefits": "产品优势",
-    "contactUs": "联系我们获取更多信息"
+    "contactUs": "联系我们获取更多信息",
+    "notFound": "产品未找到",
+    "backToProducts": "返回产品列表"
   },
   "newsletter": {
     "title": "订阅以接收未来更新",
