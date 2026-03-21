@@ -32,7 +32,8 @@
     "openSupportTicket": "打开支持工单",
     "termsOfUse": "使用条款",
     "templateBy": "模板由",
-    "nextJsTemplates": "Next.js 模板"
+    "nextJsTemplates": "Next.js 模板",
+    "description": "我们是一支拥有17年银行级金融系统开发经验的资深技术团队，专注企业级全栈开发、云原生架构与高可用系统交付。"
   },
   "hero": {
     "title": "使用我们的模板构建您的创业公司",
@@ -80,6 +81,9 @@
     "monthly": "月付",
     "yearly": "年付",
     "startFreeTrial": "开始免费试用",
+    "liteSubtitle": "适合个人和小型项目的基础方案",
+    "basicSubtitle": "适合小型企业的标准方案",
+    "plusSubtitle": "适合大型企业的高级方案",
     "features": {
       "All UI Components": "所有 UI 组件",
       "Use with Unlimited Projects": "用于无限项目",

@@ -26,13 +26,14 @@
     "usefulLinks": "Useful Links",
     "terms": "Terms",
     "support": "Support & Help",
-    "tos": "TOS",
+    "tos": "Terms of Service",
     "privacyPolicy": "Privacy Policy",
     "refundPolicy": "Refund Policy",
     "openSupportTicket": "Open Support Ticket",
     "termsOfUse": "Terms of Use",
     "templateBy": "Template by",
-    "nextJsTemplates": "Next.js Templates"
+    "nextJsTemplates": "Next.js Templates",
+    "description": "We are a senior technical team with 17 years of experience in banking-grade financial system development, specializing in enterprise full-stack development, cloud-native architecture, and high-availability system delivery."
   },
   "hero": {
     "title": "Build your startup with our template",
@@ -76,10 +77,13 @@
   },
   "pricing": {
     "title": "Simple and Affordable Pricing",
-    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+    "description": "We provide transparent pricing plans to meet the needs of businesses of all sizes, with no hidden fees.",
     "monthly": "Monthly",
     "yearly": "Yearly",
     "startFreeTrial": "Start Free Trial",
+    "liteSubtitle": "Basic plan for individuals and small projects",
+    "basicSubtitle": "Standard plan for small businesses",
+    "plusSubtitle": "Premium plan for large enterprises",
     "features": {
       "All UI Components": "All UI Components",
       "Use with Unlimited Projects": "Use with Unlimited Projects",
@@ -114,21 +118,21 @@
     "posts": [
       {
         "title": "Best UI components for modern websites",
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor."
+        "paragraph": "Explore the most popular UI components for modern website design, enhancing user experience and interface aesthetics."
       },
       {
         "title": "9 simple ways to improve your design skills",
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor."
+        "paragraph": "Enhance your design skills quickly with these 9 practical methods, creating more professional work."
       },
       {
         "title": "Tips to quickly improve your coding speed.",
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor."
+        "paragraph": "Master these coding techniques to improve development efficiency, reduce repetitive work, and make programming more fluid."
       }
     ]
   },
   "contact": {
     "title": "Contact Page",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+    "description": "No matter what questions or needs you have, we are always ready to help you. Please contact us through the following methods.",
     "name": "Name",
     "email": "Email",
     "message": "Message",

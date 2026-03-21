@@ -71,7 +71,7 @@ const Pricing = () => {
             packageName="Lite"
             price={isMonthly ? "40" : "120"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            subtitle={t18n('pricing.liteSubtitle', language)}
             language={language}
           >
             <OfferList text="All UI Components" status="active" language={language} />
@@ -85,7 +85,7 @@ const Pricing = () => {
             packageName="Basic"
             price={isMonthly ? "399" : "789"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            subtitle={t18n('pricing.basicSubtitle', language)}
             language={language}
           >
             <OfferList text="All UI Components" status="active" language={language} />
@@ -99,7 +99,7 @@ const Pricing = () => {
             packageName="Plus"
             price={isMonthly ? "589" : "999"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
+            subtitle={t18n('pricing.plusSubtitle', language)}
             language={language}
           >
             <OfferList text="All UI Components" status="active" language={language} />
