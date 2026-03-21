@@ -36,7 +36,7 @@
   },
   "hero": {
     "title": "使用我们的模板构建您的创业公司",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis.",
+    "description": "我们提供专业的Next.js模板，帮助您快速构建现代化的创业公司网站。",
     "getStarted": "开始使用",
     "learnMore": "了解更多"
   },
@@ -63,20 +63,20 @@
     ],
     "sectionTwo": {
       "bugFree": "无 bug 代码",
-      "bugFreeDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "bugFreeDesc": "我们的代码经过严格测试，确保无bug，为您提供稳定可靠的网站体验。",
       "premierSupport": "优质支持",
-      "premierSupportDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "premierSupportDesc": "我们提供专业的技术支持，及时解决您在使用过程中遇到的任何问题。",
       "nextjs": "Next.js",
-      "nextjsDesc": "Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt consectetur adipiscing elit setim."
+      "nextjsDesc": "基于最新的Next.js技术栈，为您提供高性能、现代化的网站解决方案。"
     }
   },
   "services": {
     "title": "我们的服务",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis."
+    "description": "我们提供全方位的网站开发服务，包括前端开发、后端开发、UI/UX设计等。"
   },
   "pricing": {
     "title": "简单实惠的价格",
-    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+    "description": "我们提供透明的价格方案，满足不同规模企业的需求，无隐藏费用。",
     "monthly": "月付",
     "yearly": "年付",
     "startFreeTrial": "开始免费试用",
@@ -91,7 +91,7 @@
   },
   "blog": {
     "title": "博客网格",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+    "description": "探索我们的博客文章，了解最新的技术趋势和行业洞察。",
     "searchPlaceholder": "搜索...",
     "relatedPosts": "相关文章",
     "popularCategory": "热门分类",
@@ -114,21 +114,21 @@
     "posts": [
       {
         "title": "现代网站的最佳 UI 组件",
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor."
+        "paragraph": "探索现代网站设计中最受欢迎的UI组件，提升用户体验和界面美观度。"
       },
       {
         "title": "9 种快速提高设计技能的简单方法",
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor."
+        "paragraph": "通过这9种实用方法，快速提升您的设计技能，创作出更专业的作品。"
       },
       {
         "title": "快速提高编码速度的技巧",
-        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor."
+        "paragraph": "掌握这些编码技巧，提高开发效率，减少重复工作，让编程更加流畅。"
       }
     ]
   },
   "contact": {
     "title": "联系我们",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+    "description": "无论您有任何问题或需求，我们都随时准备为您提供帮助。请通过以下方式与我们联系。",
     "name": "姓名",
     "email": "邮箱",
     "message": "留言",
@@ -149,30 +149,30 @@
   },
   "features": {
     "title": "主要特性",
-    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+    "description": "我们的模板具有丰富的特性，为您的创业公司提供全方位的支持。",
     "items": {
       "Crafted for Startups": "专为创业公司打造",
-      "Crafted for Startups_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Crafted for Startups_desc": "我们的模板专为创业公司设计，满足初创企业的各种需求，帮助您快速启动业务。",
       "High-quality Design": "高品质设计",
-      "High-quality Design_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "High-quality Design_desc": "采用现代化的设计理念，提供美观、专业的界面，提升品牌形象。",
       "Next.js 16 (Latest)": "Next.js 16（最新）",
-      "Next.js 16 (Latest)_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Next.js 16 (Latest)_desc": "基于最新的Next.js 16技术，提供高性能、SEO友好的网站解决方案。",
       "Tailwind CSS": "Tailwind CSS",
-      "Tailwind CSS_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Tailwind CSS_desc": "使用Tailwind CSS构建，实现快速、灵活的样式定制，适配各种设备。",
       "Fully Customizable": "完全可定制",
-      "Fully Customizable_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Fully Customizable_desc": "高度可定制的代码结构，让您根据业务需求自由调整和扩展。",
       "Free and Open-Source": "免费开源",
-      "Free and Open-Source_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
+      "Free and Open-Source_desc": "完全免费开源，无任何隐藏费用，您可以自由使用和修改。"
     }
   },
   "testimonials": {
     "title": "用户怎么说",
-    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+    "description": "听听我们的用户如何评价我们的服务和产品。",
     "content": "我们的成员都印象深刻。它直观、干净、无干扰。如果你正在建立一个社区。"
   },
   "video": {
     "title": "我们随时准备帮助您",
-    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+    "description": "观看我们的视频，了解如何使用我们的模板和服务。"
   },
   "breadcrumb": {
     "home": "首页"
@@ -220,7 +220,7 @@
   },
   "blogDetails": {
     "title": "博客详情",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.",
+    "description": "深入了解我们的博客文章，获取详细的技术知识和行业见解。",
     "author": "约翰·多伊",
     "date": "2023年5月15日"
   },
@@ -292,7 +292,7 @@
   },
   "newsletter": {
     "title": "订阅以接收未来更新",
-    "description": "Lorem ipsum dolor sited Sed ullam corper consectur adipiscing Mae ornare massa quis lectus.",
+    "description": "订阅我们的通讯，及时获取最新的产品更新、技术资讯和行业动态。",
     "namePlaceholder": "输入您的姓名",
     "emailPlaceholder": "输入您的邮箱",
     "buttonText": "订阅",

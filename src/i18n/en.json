@@ -36,7 +36,7 @@
   },
   "hero": {
     "title": "Build your startup with our template",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis.",
+    "description": "We provide professional Next.js templates to help you quickly build modern startup websites.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
@@ -72,7 +72,7 @@
   },
   "services": {
     "title": "Our Services",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis."
+    "description": "We provide comprehensive website development services, including front-end development, back-end development, UI/UX design, and more."
   },
   "pricing": {
     "title": "Simple and Affordable Pricing",
@@ -149,20 +149,20 @@
   },
   "features": {
     "title": "Main Features",
-    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.",
+    "description": "Our template has rich features to provide comprehensive support for your startup.",
     "items": {
       "Crafted for Startups": "Crafted for Startups",
-      "Crafted for Startups_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Crafted for Startups_desc": "Our template is specially designed for startups, meeting various needs of early-stage businesses and helping you launch quickly.",
       "High-quality Design": "High-quality Design",
-      "High-quality Design_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "High-quality Design_desc": "Adopting modern design concepts, providing beautiful and professional interfaces to enhance brand image.",
       "Next.js 16 (Latest)": "Next.js 16 (Latest)",
-      "Next.js 16 (Latest)_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Next.js 16 (Latest)_desc": "Based on the latest Next.js 16 technology, providing high-performance, SEO-friendly website solutions.",
       "Tailwind CSS": "Tailwind CSS",
-      "Tailwind CSS_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Tailwind CSS_desc": "Built with Tailwind CSS, enabling quick and flexible style customization for various devices.",
       "Fully Customizable": "Fully Customizable",
-      "Fully Customizable_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores.",
+      "Fully Customizable_desc": "Highly customizable code structure, allowing you to freely adjust and extend according to business needs.",
       "Free and Open-Source": "Free and Open-Source",
-      "Free and Open-Source_desc": "Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
+      "Free and Open-Source_desc": "Completely free and open-source, no hidden costs, you can freely use and modify."
     }
   },
   "testimonials": {

@@ -15,19 +15,26 @@ export function t18n(key: string, locale: string = 'en'): string {
       return key;
     }
     
-    for (const k of keys) {
-      // Check if result is an array and k is a number
-      if (Array.isArray(result) && !isNaN(Number(k))) {
-        const index = Number(k);
-        if (index >= 0 && index < result.length) {
-          result = result[index];
-        } else {
-          return key; // Return the key if index is out of bounds
-        }
-      } else if (result && typeof result === 'object' && k in result) {
-        result = result[k];
+    let i = 0;
+    while (i < keys.length) {
+      let currentKey = keys[i];
+      // Check if currentKey exists in result
+      if (result && typeof result === 'object' && currentKey in result) {
+        result = result[currentKey];
+        i++;
       } else {
-        return key; // Return the key if translation not found
+        // If currentKey doesn't exist, try to combine with next key
+        if (i < keys.length - 1) {
+          currentKey = keys.slice(i).join('.');
+          if (result && typeof result === 'object' && currentKey in result) {
+            result = result[currentKey];
+            break;
+          } else {
+            return key; // Return the key if translation not found
+          }
+        } else {
+          return key; // Return the key if translation not found
+        }
       }
     }
     
