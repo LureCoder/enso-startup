@@ -40,8 +40,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/ensoo-startup:latest
-            ${{ secrets.DOCKER_USERNAME }}/ensoo-startup:v${{ env.VERSION }}
+            lurecoder/ensoo-startup:latest
+            lurecoder/ensoo-startup:v${{ env.VERSION }}
 
       - name: 部署到服务器
         uses: appleboy/ssh-action@v1.0.3
@@ -76,7 +76,7 @@ jobs:
             docker rm ensoo-startup 2>/dev/null || echo "容器不存在"
             
             echo "========== 拉取最新镜像 =========="
-            docker pull ${{ secrets.DOCKER_USERNAME }}/ensoo-startup:v$BUILD_VERSION
+            docker pull lurecoder/ensoo-startup:v$BUILD_VERSION
             
             echo "========== 启动新容器 =========="
             docker run -d \
@@ -84,7 +84,7 @@ jobs:
               --restart=always \
               -p 80:80 -p 443:443 \
               -v /home/githubdeployer/certs:/etc/certs:ro \
-              ${{ secrets.DOCKER_USERNAME }}/ensoo-startup:v$BUILD_VERSION || {
+              lurecoder/ensoo-startup:v$BUILD_VERSION || {
               echo "错误: 容器启动失败"
               exit 1
             }
