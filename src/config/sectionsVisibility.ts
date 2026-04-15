@@ -23,7 +23,7 @@ const sectionConfig: SectionVisibilityConfig = {
   testimonials: true,
   pricing: false,
   blog: true,
-  contact: true
+  contact: false
 };
 
 export default sectionConfig;
